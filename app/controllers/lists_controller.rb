@@ -9,7 +9,8 @@ class ListsController < ApplicationController
       redirect_to list_path(@list.id)
     # 投稿機能から詳細画面へリダイレクト
     else
-      render :new
+      @lists = List.all
+      render :index
     end
   end
   
